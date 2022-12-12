@@ -42,5 +42,7 @@ public class App {
         System.out.println("A színház pillanatnyi árbevétele " + chairService.countTotalIncome() + " Ft.");
         System.out.println("6. feladat");
         System.out.println(chairService.countSingleFreeChairs() + " db egyedülálló üres szék van a nézőtéren.");
+        System.out.println("7.feladat");
+        fileWriter.printAll(chairService.getAuditoriumStatus());
     }
 }

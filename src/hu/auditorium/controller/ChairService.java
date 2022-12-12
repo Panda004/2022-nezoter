@@ -74,5 +74,22 @@ public class ChairService {
                 isOccupied(chair.getRow(), chair.getNumber() + 1);
     }
 
+    public List<String> getAuditoriumStatus(){
+        String auditoriumsStatusInRow = getAuditoriumsStatusInRow();
+        return IntStream.range(0, ROW_MAX)
+                .mapToObj(row -> printChairsInRow(auditoriumsStatusInRow, row))
+                .collect(Collectors.toList());
+    }
+
+    private String getAuditoriumsStatusInRow(){
+        return chairs.stream()
+                .map(Chair::toString)
+                .collect(Collectors.joining());
+    }
+     private  String printChairsInRow(String auditoriumStatusInRow, int row) {
+        return auditoriumStatusInRow.substring(row * NUMBER_MAX, (row + 1) * NUMBER_MAX);
+     }
+
+
 
 }
