@@ -33,5 +33,14 @@ public class App {
         int row = console.read();
         System.out.print(" - szék száma: ");
         int number = console.read();
+        System.out.println(chairService.isGivenChairOccupied(row, number));
+        System.out.println("3. feladat");
+        System.out.println(chairService.getStatistic());
+        System.out.println("4. feladat");
+        System.out.println("A legtöbb jegyet a(z) "+ chairService.getMostPopularCategoryId() + ". árkategóriában értékesítették." );
+        System.out.println(" 5. feladat");
+        System.out.println("A színház pillanatnyi árbevétele " + chairService.countTotalIncome() + " Ft.");
+        System.out.println("6. feladat");
+        System.out.println(chairService.countSingleFreeChairs() + " db egyedülálló üres szék van a nézőtéren.");
     }
 }
